@@ -1,9 +1,32 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+import Input from '../components/Input.vue'
+
+const email = ref('')
+const password = ref('')
+</script>
+
 <template>
   <main>
     <section>
       <h1>Faça login para continuar</h1>
       <form>
+        <Input
+          type="email"
+          id="email-input"
+          icon="ph:at"
+          v-model="email"
+          required
+        />
 
+        <Input
+          type="password"
+          id="password-input"
+          icon="ph:lock"
+          v-model="password"
+          required
+        />
       </form>
     </section>
   </main>
@@ -24,6 +47,13 @@ main {
     border-radius: 10px;
     background-color: $bg-color-s;
     box-shadow: 5px 5px 15px rgb(0 0 0 / 50%);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
   }
 }
 </style>
