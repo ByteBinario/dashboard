@@ -2,9 +2,11 @@
 import { ref } from 'vue'
 
 import Input from '../components/Input.vue'
+import Button from '../components/Button.vue'
 
 const email = ref('')
 const password = ref('')
+const loading = ref(false)
 </script>
 
 <template>
@@ -27,6 +29,13 @@ const password = ref('')
           v-model="password"
           required
         />
+
+        <Button
+          :loading="loading"
+          @click="loading = !loading"
+        >
+          Entrar
+        </Button>
       </form>
     </section>
   </main>
