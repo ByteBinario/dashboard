@@ -31,6 +31,7 @@ const loading = ref(false)
         />
 
         <Button
+          type="submit"
           :loading="loading"
           @click="loading = !loading"
         >
